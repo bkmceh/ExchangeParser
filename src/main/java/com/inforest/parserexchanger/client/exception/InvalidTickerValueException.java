@@ -1,4 +1,4 @@
-package com.inforest.parserexchanger.server.exception;
+package com.inforest.parserexchanger.client.exception;
 
 public class InvalidTickerValueException extends RuntimeException {
     public InvalidTickerValueException(String msg) {
