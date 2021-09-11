@@ -26,7 +26,7 @@ public class ExchangeParser {
             CloseableHttpResponse httpResponse = client.execute(createRequest(ticker));
             if (httpResponse.getStatusLine().getStatusCode() != HttpStatus.SC_OK) {
                 throw new ParseException(
-                        String.format("Unable to get response cause by: %s", ticker));
+                        String.format("Unable to get response for ticker: %s", ticker));
             }
             String jsonString = EntityUtils.toString(httpResponse.getEntity());
             jsonResponse = MAPPER.writeValueAsString(MAPPER.readValue(jsonString, TradeInfoClientDTO.class));
