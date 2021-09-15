@@ -1,24 +1,24 @@
 # exchange-parser
 
 ## 💾 Information
-Данная программа получает информацию о цене последней совершенной сделки по тикеру.
+This program receives information about the price of the last executed deal by the ticker.
 
-Запрос адреса осуществляется через взаимодействие с API Московской Биржи
+The address is requested through interaction with the **_Moscow Exchange API_**
 
-Программа имитирует работу клиента, а также ответ от сервера.
+The program simulates the work of the client, as well as the response from the server.
 
-Имитация клиента расположена в `inforest/parserexchanger/client`
+The client simulation is located in `inforest/parserexchanger/client`
 
-Код сервера расположен в `inforest/parserexchanger/server`
+The server code is located in `inforest/parserexchanger/server`
 
-### ❓ Что делает клиент?
-Клиент вводит название тикера в консоль и посылает гет-запрос с именем тикера:
+### ❓ What does the client do?
+The client enters the name of the ticker into the console and sends a get request with the name of the ticker on address:
 ```
 http://localhost:8080/api/get?ticker=tickerName
 ```
-При успешном выполнении получает ответ в виде JSON. 
-Пример:
-```json
+If successful, it receives a JSON response.
+Example:
+```json5
 {
   "response": {
     "time": "2021-09-09 18:48:17",
@@ -28,11 +28,11 @@ http://localhost:8080/api/get?ticker=tickerName
 }
 ```
 
-### ❓ Что делает сервер?
-Сервер получает гет-запрос от нашего клиента.
-Затем сервер делает гет-запрос на API Московской Биржи и возвращает ответ.
+### ❓ What does the server do?
+The server receives a get request from our client.
+Then the server makes a get request to the **_Moscow Exchange API_** and returns a response.
 
 ## 📝 How to run
-Просто склонируйте репозиторий к себе
-- Запустите `ParserExchangerApplication.java`
-- Запустите `client/Main.java`
+Just clone the repository to yourself
+- Run `ParserExchangerApplication.java`
+- Run `client/Main.java`
