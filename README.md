@@ -3,19 +3,19 @@
 ## 💾 Information
 This program receives information about the price of the last executed deal by the ticker.
 
-The address is requested through interaction with the **_Moscow Exchange API_**
+The address is requested through interaction with the **_Moscow Exchange API_**.
 
-The program simulates the work of the client, as well as the response from the server.
-
-The client simulation is located in `inforest/parserexchanger/client`
-
-The server code is located in `inforest/parserexchanger/server`
-
-### ❓ What does the client do?
-The client enters the name of the ticker into the console and sends a get request with the name of the ticker on address:
+### ❓ How to send request?
+Request sends on address with _**ticker**_ path parameters:
 ```
-http://localhost:8080/api/get?ticker=tickerName
+http://localhost:8080/api/get
 ```
+
+Example curl request:
+```
+curl "http://localhost:8080/api/get?ticker=aflt"
+```
+
 If successful, it receives a JSON response.
 Example:
 ```json5
@@ -29,10 +29,21 @@ Example:
 ```
 
 ### ❓ What does the server do?
-The server receives a get request from our client.
+The server receives a get request.
 Then the server makes a get request to the **_Moscow Exchange API_** and returns a response.
 
 ## 📝 How to run
-Just clone the repository to yourself
-- Run `ParserExchangerApplication.java`
-- Run `client/Main.java`
+### Main dependencies
+- Java - 11
+- Maven - 4.0.0
+### Building
+For building the project, write this command in terminal into the root directory of your project.
+```
+mvn clean install
+```
+### Running
+For running the assembled project, write this command in terminal into the root
+directory of your project.
+```
+java -jar .\target\ParserExchanger-1.1.jar
+```
